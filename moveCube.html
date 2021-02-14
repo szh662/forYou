@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: fixed;
+        }
+        
+        .notMove {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            position: fixed;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <div class="notMove"></div>
+</body>
+<script>
+    var box = document.querySelector(".box");
+    var  notMove = document.querySelector(".notMove");
+    box.style.top = 0;
+    box.style.left = 0;
+    notMove.style.top = 0;
+    notMove.style.right = 0;
+
+    document.documentElement.onkeydown = function(e) {
+        // 左上右下
+        console.log(e.keyCode);
+        if (e.keyCode == 37) box.style.left = parseInt(box.style.left) - 50 + "px";
+        if (e.keyCode == 38) box.style.top = parseInt(box.style.top) - 50 + "px";
+        if (e.keyCode == 39) box.style.left = parseInt(box.style.left) + 50 + "px";
+        if (e.keyCode == 40) box.style.top = parseInt(box.style.top) + 50 + "px";
+
+        //  87 65 83 68 
+        if (e.keyCode == 65) notMove.style.right = parseInt(notMove.style.right) + 50 + "px";
+        if (e.keyCode == 87) notMove.style.top = parseInt(notMove.style.top) - 50 + "px";
+        if (e.keyCode == 68) notMove.style.right = parseInt(notMove.style.right) - 50 + "px";
+        if (e.keyCode == 83) notMove.style.top = parseInt(notMove.style.top) + 50 + "px";
+    }
+</script>
+
+</html>
