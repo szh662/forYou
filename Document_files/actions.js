@@ -121,20 +121,17 @@ const Actions = [{
   {
     lifeTime: 180,
     texts: [{
-      text: '破',
+      text: '生',
       hsla: color3
-    },{
-      text: '壳',
-      hsla: color2
     },{
       text: '日',
-      hsla: color3
-    },{
-      text: '快',
       hsla: color2
     },{
-      text: '乐',
+      text: '快',
       hsla: color3
+    },{
+      text: '乐',
+      hsla: color2
     }]
   },
   {
